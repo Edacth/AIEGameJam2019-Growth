@@ -30,19 +30,19 @@ public class DragController : MonoBehaviour {
         Vector3 mouseWorldPosition = new Vector3(mousePos.x * unitPerPixel, 5, mousePos.y * unitPerPixel);
         Debug.DrawRay(mouseWorldPosition, Vector3.down * 10, Color.red);
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0)) //Left mouse down
         {
             RaycastHit hit;
             if (Physics.Raycast(mouseWorldPosition, Vector3.down * 10, out hit, 10, mask))
             {
                 selectedRigidBody = hit.rigidbody;
                 Debug.DrawRay(mouseWorldPosition, Vector3.down * 10, Color.green);
-                Debug.Log("Found RB");
+                //Debug.Log("Found RB");
             }
             cachedMousePos = mousePos;
         }
 
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(0)) //Left mouse up
         {
             selectedRigidBody = null;
             cachedMousePos = Vector2.zero;
@@ -50,24 +50,6 @@ public class DragController : MonoBehaviour {
 
         if (cachedMousePos != Vector2.zero)
         {
-            //if (mousePos.x > cachedMousePos.x)
-            //{
-            //    dragDir.x = 1;
-            //}
-            //else if (mousePos.x < cachedMousePos.x)
-            //{
-            //    dragDir.x = -1;
-            //}
-
-            //if (mousePos.y > cachedMousePos.y)
-            //{
-            //    dragDir.z = 1;
-            //}
-            //else if (mousePos.y < cachedMousePos.y)
-            //{
-            //    dragDir.z = -1;
-            //}
-
             dragDir.x = mousePos.x - cachedMousePos.x;
             dragDir.z = mousePos.y - cachedMousePos.y;
         }

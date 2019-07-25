@@ -1,20 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DragController : MonoBehaviour {
     private float screenHeightInUnits;
     private float screenWidthInUnits;
     private float unitPerPixel;
-    public Vector2 mousePos;
-    public Vector2 cachedMousePos;
-    LayerMask mask;
-    public Vector3 dragDir;
+    private Vector2 mousePos;
+    private Vector2 cachedMousePos;
+    private Vector3 mouseWorldPosition;
+    private LayerMask mask;
+    private Vector3 dragDir;
+
+    public float dragStrength = 1;
 
 
     public Rigidbody selectedRigidBody;
     public GameObject testObject;
     public Camera mainCamera;
+    public Text debugText;
 
     void Start ()
     {
@@ -27,7 +32,9 @@ public class DragController : MonoBehaviour {
 	void Update ()
     {
         mousePos = Input.mousePosition;
-        Vector3 mouseWorldPosition = new Vector3(mousePos.x * unitPerPixel, 5, mousePos.y * unitPerPixel);
+        mouseWorldPosition = new Vector3(mainCamera.ScreenToWorldPoint(mousePos).x, 5, mainCamera.ScreenToWorldPoint(mousePos).z);
+        //mouseWorldPosition = new Vector3(mousePos.x * unitPerPixel, 5, mousePos.y * unitPerPixel);
+        debugText.text = mouseWorldPosition.ToString();
         Debug.DrawRay(mouseWorldPosition, Vector3.down * 10, Color.red);
 
         if (Input.GetMouseButtonDown(0)) //Left mouse down
@@ -56,8 +63,15 @@ public class DragController : MonoBehaviour {
 
         if (selectedRigidBody != null)
         {
-            selectedRigidBody.AddForce(dragDir * 2);
+            
+            selectedRigidBody.AddForce(dragDir * dragStrength);
             cachedMousePos = mousePos;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+            
         }
 	}
 }

@@ -9,57 +9,55 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1402840294377220}
+  m_RootGameObject: {fileID: 1907520834250434}
   m_IsPrefabAsset: 1
---- !u!1 &1402840294377220
+--- !u!1 &1907520834250434
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4239794519387588}
-  - component: {fileID: 33052506967947496}
-  - component: {fileID: 23665151363724182}
-  - component: {fileID: 65276910291963798}
-  - component: {fileID: 54932044331565716}
-  - component: {fileID: 114150449989624384}
-  m_Layer: 9
-  m_Name: Square
-  m_TagString: Player
+  - component: {fileID: 4731553937470944}
+  - component: {fileID: 33894393262954232}
+  - component: {fileID: 23174310203521322}
+  - component: {fileID: 65471282584693420}
+  m_Layer: 0
+  m_Name: GrowthZone 1
+  m_TagString: Growth
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4239794519387588
+--- !u!4 &4731553937470944
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1402840294377220}
+  m_GameObject: {fileID: 1907520834250434}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4, y: 1, z: 4}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.5, y: 0.55, z: 0.5}
+  m_LocalScale: {x: 1, y: 0.1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23665151363724182
+--- !u!23 &23174310203521322
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1402840294377220}
+  m_GameObject: {fileID: 1907520834250434}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 0
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: d7e94b983faf9e746bae87de3f8817d6, type: 2}
+  - {fileID: 2100000, guid: 6b8cebac229b58245846a7b351be0516, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -79,56 +77,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33052506967947496
+--- !u!33 &33894393262954232
 MeshFilter:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1402840294377220}
+  m_GameObject: {fileID: 1907520834250434}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &54932044331565716
-Rigidbody:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1402840294377220}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 1
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 116
-  m_CollisionDetection: 0
---- !u!65 &65276910291963798
+--- !u!65 &65471282584693420
 BoxCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1402840294377220}
+  m_GameObject: {fileID: 1907520834250434}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114150449989624384
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1402840294377220}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d0df7188f8894041ad81160aff3a820, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startingSize: 1
-  upperSizeBound: 1.5
-  lowerSizeBound: 0.5
-  changeSpeed: 0.01
-  sizeValue: 0
-  isShrinking: 0
-  isGrowing: 0
-  zoneCollisions: []

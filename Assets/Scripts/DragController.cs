@@ -34,7 +34,7 @@ public class DragController : MonoBehaviour {
         mousePos = Input.mousePosition;
         mouseWorldPosition = new Vector3(mainCamera.ScreenToWorldPoint(mousePos).x, 5, mainCamera.ScreenToWorldPoint(mousePos).z);
         //mouseWorldPosition = new Vector3(mousePos.x * unitPerPixel, 5, mousePos.y * unitPerPixel);
-        debugText.text = mouseWorldPosition.ToString();
+        //debugText.text = mouseWorldPosition.ToString();
         Debug.DrawRay(mouseWorldPosition, Vector3.down * 10, Color.red);
 
         if (Input.GetMouseButtonDown(0)) //Left mouse down

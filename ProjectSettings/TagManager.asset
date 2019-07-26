@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Growth
   - Shrink
+  - Clockwise
+  - CounterClockwise
   layers:
   - Default
   - TransparentFX

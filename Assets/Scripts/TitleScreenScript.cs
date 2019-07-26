@@ -32,6 +32,18 @@ public class TitleScreenScript : MonoBehaviour {
         {
             SceneManager.LoadScene("Level1");
         }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+
+        }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            StartSequence();
+
+        }
     }
 
     public void StartSequence()
